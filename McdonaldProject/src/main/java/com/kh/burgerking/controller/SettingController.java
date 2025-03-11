@@ -1,11 +1,16 @@
 package com.kh.burgerking.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.kh.burgerking.model.dto.Hamburger;
 
 @WebServlet("/sc")
 public class SettingController extends HttpServlet {
@@ -49,6 +54,21 @@ public class SettingController extends HttpServlet {
 		 */
 		request.setAttribute("brand", "KFC");
 		request.setAttribute("bestSeller", new Hamburger("징거버거", 6200, "KFC"));
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("brand", "Mcdonald");
+		session.setAttribute("brandSeller", new Hamburger("맥도날드", 6400, "Mest"));
+		
+		// 숫자
+		request.setAttribute("big", 10);
+		request.setAttribute("small", 3);
+		
+		// 문자
+		request.setAttribute("str", "좋아하는문구");
+		
+		// 리스트
+		request.setAttribute("list", new ArrayList());
+		
 		
 		request.getRequestDispatcher("/WEB-INF/views/print.jsp").forward(request, response);
 	}
