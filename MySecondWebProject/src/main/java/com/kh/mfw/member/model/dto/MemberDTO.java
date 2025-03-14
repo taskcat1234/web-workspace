@@ -80,6 +80,12 @@ public class MemberDTO {
 	public void setEnrollDate(Date enrollDate) {
 		this.enrollDate = enrollDate;
 	}
+
+	@Override
+	public String toString() {
+		return "MemberDTO [memberId=" + memberId + ", memberPw=" + memberPw + ", memberName=" + memberName + ", email="
+				+ email + ", enrollDate=" + enrollDate + "]";
+	}
 	
 	
 }
