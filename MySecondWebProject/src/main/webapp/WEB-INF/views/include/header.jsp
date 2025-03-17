@@ -72,7 +72,7 @@
 </head>
 
 <body id="page-top">
-  <c:if test="$s{ not empty sessionScope.message}">
+  <c:if test="${ not empty sessionScope.message}">
   	<script>
   		alert('${sessionScope.message}');
   	</script>
@@ -99,7 +99,7 @@
             <a class="nav-link js-scroll-trigger" href="#">공지사항</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#">게시판</a>
+            <a class="nav-link js-scroll-trigger" href="boards?page=1">게시판</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#">사진게시판</a>
